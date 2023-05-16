@@ -24,7 +24,7 @@ public class GatewayConfiguration {
         .route(
             "user-service",
             r ->
-                r.path("/api/user-service/**")
+                r.path("/api/searches/**")
                     .filters(f -> f.filter(filter))
                     .uri("http://localhost:8081"))
         .route(

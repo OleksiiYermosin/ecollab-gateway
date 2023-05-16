@@ -8,9 +8,7 @@ spring:
           '[/**]':
             allowedOrigins: "*"
             allowedHeaders: "*"
-            allowedMethods:
-              - GET
-              - POST
+            allowedMethods: "*"
   jackson:
     default-property-inclusion:
       - NON_NULL
