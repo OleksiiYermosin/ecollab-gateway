@@ -36,6 +36,12 @@ public class AuthService {
             .getId();
   }
 
+  public String getNameDetails(String username) {
+    return userRepository
+            .getUserEntityByUsername(username)
+            .getName();
+  }
+
   public String generateToken(String username) {
     Claims claims = Jwts.claims().setSubject(username);
     long nowMillis = System.currentTimeMillis();

@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: 'proxy'
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+  jackson:
+    default-property-inclusion:
+      - NON_NULL
+server:
+  port: 8084
+
+jwt:
+  secret: 'secretkey'

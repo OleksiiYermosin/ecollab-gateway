@@ -3,10 +3,7 @@ package ua.kpi.ecollab.auth.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import ua.kpi.ecollab.auth.service.AuthService;
 
@@ -39,7 +36,7 @@ public class AuthController {
             "token",
             token,
             "username",
-            credentials.get("username"),
+            authService.getNameDetails(credentials.get("username")),
             "id",
             String.valueOf(authService.getUserId(credentials.get("username")))),
         HttpStatus.OK);
